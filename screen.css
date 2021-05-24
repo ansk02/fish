@@ -268,12 +268,14 @@ img{
 .menu-summary-title{
 	font-weight: bold;
 	font-size: 1.125rem;
-	margin-bottom: 0.75rem;
+	padding-bottom: 0.75rem;
+	margin-bottom: 0;
 	color: #383838;
 }
 
 .menu-summary p{
-	margin-top: 0;
+	margin: 0;
+	padding-bottom: 1rem;
 	font-size: 0.875rem;
 }
 
@@ -284,10 +286,77 @@ img{
 	line-height: 1;
 }
 
-@media only screen and (min-width: 768px)
-{
+.title-word{
+	display: inline-block;
+	font-family: 'Source Sans Pro', serif;
+}
+
+
+.block-chief{
+	margin-bottom: 0;
+}
+
+/*SECTION DEDIEE A LA RESERVATION*/
+
+.reservation{
+
+
+	background: linear-gradient(180deg, rgba(0, 0, 0, 0.92) , rgba(54, 54, 54, 0.5) 39.24%, rgba(28, 28, 28, 0.4)),
+	url('img/reservation.jpg') center center / cover no-repeat ;
+	color: #FFF;
+
+	padding: 50px 0;
+
+	color: rgba(255, 255, 255, 0.6);
 
 }
+
+
+.reservation input, .reservation select{
+
+	padding: 0 0.5rem;
+	width: 100%;
+	margin-bottom: 15px;
+	border: solid 1px #6F6F6F;
+	background: transparent;
+	text-transform: uppercase;
+	height: 40px;
+	color: #ddd;
+	font-size: 0.875rem;
+	font-family: 'Source Sans Pro', serif;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	appearance: none;
+
+
+}
+
+
+.reservation input:focus, .reservation select:focus
+{
+	background: rgba(255, 255, 255, 0.1);
+	border-color: #c89446;
+	transition: background .3s, border-color .3s;
+}
+
+.reservation .button{
+
+	width: 100%;
+}
+
+
+.button{
+	font-weight: 600;
+	font-size: 0.875rem;
+	color: #ddd;
+	background: #c89446;
+	border: none;
+	padding: 11px 1rem;
+	cursor: pointer;
+}
+
+/*----------------------------------------------------------*/
+
 
 @media only screen and (min-width: 600px)
 {
@@ -435,14 +504,17 @@ img{
 	}
 
 	.menu-summary{
+		position: relative; 
 		padding: 85px 0;
 		display: flex;
 		flex-wrap: wrap;
+		justify-content: space-between;
 	}
 
 	.menu-summary-item{
 		padding-left: 192px;
-		width: 50%;
+		margin-bottom: 110px;
+		width:calc(50% - 30px);
 	}
 
 	.menu-summary-item:nth-child(even){
@@ -451,7 +523,7 @@ img{
 		padding-right: 192px;
 	}
 
-	.menu-summary-item:nth-child(2) .menu-summary-image{
+	.menu-summary-item:nth-child(even) .menu-summary-image{
 		left: auto;
 		right: 0;
 	}
@@ -462,6 +534,68 @@ img{
 
 	.menu-summary-title{
 		margin-top: 0;
+		line-height: 1;
+		background: #fff;
+	}
+
+
+	.menu-summary p{
+		background: #fff;
+	}
+
+
+	.menu-summary-item:nth-child(even) .menu-summary-price{
+		margin-left: auto;
+	}
+
+	.menu-summary-price{
+		margin-top: 1rem;
+		padding-top: 4px; 
+		width: 85px;
+		background: #fff;
+	}
+
+	.menu-summary::before{
+
+		content: '';
+		display: block;
+		position: absolute;
+		/*top: 0;*/
+		top: 50%;
+		left: 50%;
+		width: 420px;
+		height: 420px;
+		border: solid 1px #c89446;
+		transform: translate(-50%, -300px) rotate(45deg);
+		/*transform: translate(-50%, 20%) rotate(45deg);*/
+
+	}
+
+	.block-chief{
+		display: flex;
+		align-items: center;
+		margin-bottom: 0;
+	}
+
+	.block-chief .block-body h2{
+		display: inline-block;
+	}
+
+	.block-chief .block-image::before{
+		display: none;
+	}
+
+	.block-chief .block-image{
+		flex: none;
+		width: 404px;
+		order: 2;
+	}
+
+
+	.reservation
+	{
+		padding: 70px 0;
+
 	}
 
 }
